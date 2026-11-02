@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+        {% if title %}
+            FastAPI Blog: {{ title }}
+        {% else %}
+            FastAPI Blog
+        {% endif %}
+    </title>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800 flex flex-col">
+<nav class="bg-slate-900 text-white shadow-md">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold tracking-tight">
+            FastAPI <span class="text-blue-400">Blog</span>
+        </a>
+        <div class="flex items-center gap-4 text-sm">
+            <span class="text-slate-400">Posts</span>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-1 w-full max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-extrabold text-slate-900 border-b-4 border-blue-500 pb-3 mb-8">
+        {{ title or "Home" }}
+    </h1>
+    {% block content %}
+    {% endblock content %}
+</main>
+
+<footer class="bg-slate-900 text-slate-400 text-center text-sm py-4">
+    FastAPI Blog &mdash; built with Jinja2 &amp; Tailwind CSS
+</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    <article class="bg-white rounded-xl shadow-md p-8">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Update post</h2>
+        <form action="/posts/{{ post.id }}/update" method="post" class="space-y-4">
+            <div>
+                <label for="title" class="block text-sm font-medium text-slate-700 mb-1">Title</label>
+                <input type="text" id="title" name="title" value="{{ post.title }}" required
+                       class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="content" class="block text-sm font-medium text-slate-700 mb-1">Content</label>
+                <textarea id="content" name="content" rows="8" required
+                          class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">{{ post.content }}</textarea>
+            </div>
+            <div class="flex items-center justify-between">
+                <a href="/posts/{{ post.id }}" class="text-sm text-blue-600 font-medium hover:text-blue-800">&larr; Back</a>
+                <button type="submit" class="text-sm font-medium px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
+                    Update
+                </button>
+            </div>
+        </form>
+    </article>
+{% endblock content %}

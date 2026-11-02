@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if posts %}
+        <div class="grid gap-6">
+            {% for post in posts %}
+                <article class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h2 class="text-2xl font-bold text-slate-900"><a href="/posts/{{ post.id }}" class="hover:underline">{{ post.title }}</a></h2>
+                        <span class="text-xs text-slate-400 whitespace-nowrap">{{ post.date_posted.strftime("%B %d, %Y") }}</span>
+                    </div>
+                    <p class="text-sm text-blue-600 font-medium mb-3">
+                        by
+                        <a class="hover:underline" href="{{ url_for('user_posts', user_id=post.author.id) }}">
+                            <img src="{{ post.author.image_path }}" alt="{{ post.author.username }}'s profile picture" class="w-6 h-6 rounded-full inline-block" loading="lazy">
+                            {{ post.author.username }}
+                        </a>
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">{{ post.content }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="bg-white rounded-xl shadow-md p-10 text-center text-slate-500">
+            No posts yet.
+        </div>
+    {% endif %}
+{% endblock content %}

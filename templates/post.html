@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    <article class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-3xl font-bold text-slate-900">{{ post.title }}</h2>
+            <span class="text-xs text-slate-400 whitespace-nowrap">{{ post.date_posted.strftime("%B %d, %Y") }}</span>
+        </div>
+        <p class="text-sm text-blue-600 font-medium mb-6">by {{ post.author.username }}</p>
+        <p class="text-slate-600 leading-relaxed">{{ post.content }}</p>
+        <div class="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between">
+            <a href="/" class="text-sm text-blue-600 font-medium hover:text-blue-800">&larr; Back to posts</a>
+            <div class="flex items-center gap-3">
+                <a href="/posts/{{ post.id }}/update" class="text-sm font-medium px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
+                    Edit
+                </a>
+                <form action="/posts/{{ post.id }}/delete" method="post">
+                    <button type="submit" class="text-sm font-medium px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700 transition">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </article>
+{% endblock content %}

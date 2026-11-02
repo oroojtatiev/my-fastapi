@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="413fd9a4-0676-4850-bf54-bb8229886956" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="12d58075-7aa8-4122-8cdc-3899eeaf48b5" value="" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Docker Compose" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/routers/users.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JEqc1ozSY416YcYyRlpWxqUraW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.__init__.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/Users/orooj/Library/Application Support/JetBrains/PyCharm2026.2/plugins/Shell Script/shellcheck",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/orooj/PycharmProjects/fastapi-course/tests",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "sqlite"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/media/profile_pics" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/static/profile_pics" />
+      <recent name="$PROJECT_DIR$/src/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media/profile_pics" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/src/fastapi_course" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-6fa658e1df1a-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.369" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="413fd9a4-0676-4850-bf54-bb8229886956" name="Changes" comment="" />
+      <created>1789236650918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789236650918</updated>
+      <workItem from="1789263716785" duration="16856000" />
+      <workItem from="1789404511273" duration="11366000" />
+      <workItem from="1789454270842" duration="97000" />
+      <workItem from="1789487415558" duration="7012000" />
+      <workItem from="1789590273783" duration="906000" />
+      <workItem from="1789671260330" duration="3285000" />
+      <workItem from="1789753958870" duration="200000" />
+      <workItem from="1789810430663" duration="2872000" />
+      <workItem from="1789845025476" duration="19169000" />
+      <workItem from="1790018261664" duration="2609000" />
+      <workItem from="1790364451859" duration="34552000" />
+      <workItem from="1790702385850" duration="4074000" />
+      <workItem from="1790708653124" duration="2794000" />
+      <workItem from="1790877143618" duration="5841000" />
+      <workItem from="1790904981373" duration="4651000" />
+      <workItem from="1791033449653" duration="17169000" />
+      <workItem from="1791250121496" duration="4000" />
+      <workItem from="1791250160944" duration="10048000" />
+      <workItem from="1791427060666" duration="6085000" />
+      <workItem from="1791660027286" duration="32276000" />
+      <workItem from="1791830871014" duration="10093000" />
+      <workItem from="1791911412583" duration="15624000" />
+      <workItem from="1791941751240" duration="8846000" />
+      <workItem from="1792028920594" duration="6193000" />
+      <workItem from="1792114810268" duration="2951000" />
+      <workItem from="1792290868596" duration="4987000" />
+      <workItem from="1792393565852" duration="1605000" />
+      <workItem from="1792460702085" duration="8660000" />
+      <workItem from="1792548140112" duration="5268000" />
+      <workItem from="1792588724461" duration="1688000" />
+      <workItem from="1793066331680" duration="7358000" />
+      <workItem from="1793411475522" duration="27411000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+</project>
