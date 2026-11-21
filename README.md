@@ -33,6 +33,25 @@ docker compose down                              # prod
 
 The application will be available at: [http://localhost:8000](http://localhost:8000)
 
+## PostgreSQL
+
+Credentials are in `.env`: `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`. The application itself uses `DATABASE_URL`.
+
+Inside the container:
+
+```bash
+docker compose exec db psql -U <POSTGRES_USER> -d <POSTGRES_DB>                      # prod
+docker compose -f docker-compose.dev.yaml exec db psql -U <POSTGRES_USER> -d <POSTGRES_DB>  # dev
+```
+
+From the host (port 5432 is published):
+
+```bash
+psql -h localhost -U <POSTGRES_USER> -d <POSTGRES_DB>
+```
+
+In `psql`: `\l` — databases, `\dt` — tables, `\q` — exit.
+
 ## S3
 
 Profile pictures are stored in `S3_BUCKET_NAME` under `profile_pics/`. The fallback image is `profile_pics/default.jpeg`.
