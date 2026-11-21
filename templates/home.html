@@ -11,7 +11,7 @@
                     <p class="text-sm text-blue-600 font-medium mb-3">
                         by
                         <a class="hover:underline" href="{{ url_for('user_posts', user_id=post.author.id) }}">
-                            <img src="{{ post.author.image_path }}" alt="{{ post.author.username }}'s profile picture" class="w-6 h-6 rounded-full inline-block" loading="lazy">
+                            <img src="{{ post.author.image_path }}" data-fallback="{{ default_profile_pic_url }}" alt="{{ post.author.username }}'s profile picture" class="w-6 h-6 rounded-full inline-block" loading="lazy">
                             {{ post.author.username }}
                         </a>
                     </p>

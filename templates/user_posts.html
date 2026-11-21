@@ -6,6 +6,7 @@
       <div class="d-flex align-items-start gap-4">
         <img class="rounded-circle article-img flex-shrink-0"
              src="{{ post.author.image_path }}"
+             data-fallback="{{ default_profile_pic_url }}"
              alt="{{ post.author.username }}'s profile picture"
              width="64"
              height="64"
