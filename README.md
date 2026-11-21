@@ -31,6 +31,17 @@ docker compose down                              # prod
 
 The application will be available at: [http://localhost:8000](http://localhost:8000)
 
+## S3
+
+Profile pictures are stored in `S3_BUCKET_NAME` under `profile_pics/`. The fallback image is `profile_pics/default.jpeg`.
+
+Required in `.env`: `S3_BUCKET_NAME`, `S3_REGION` (default `eu-north-1`), `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`. `S3_ENDPOINT_URL` is optional.
+
+```bash
+uv run python -m utils.s3 --check   # test credentials
+uv run python -m utils.s3 --fill    # upload media/profile_pics/* to the bucket
+```
+
 ## Alembic (DB migrations, async)
 
 The project uses **async SQLAlchemy**. Therefore Alembic is initialized with an asynchronous template.
