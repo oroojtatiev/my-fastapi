@@ -1,5 +1,7 @@
 # app
 
+FastAPI blog with async SQLAlchemy/PostgreSQL and Alembic, JWT/argon2 auth, Jinja2/Tailwind templates, S3 profile pictures and email password reset.
+
 ## Running via Docker Compose
 
 The project uses two compose files: `docker-compose.dev.yaml` (dev) and `docker-compose.yaml` (prod). The dev file has a non-standard name, so it must be specified explicitly with `-f`.
@@ -41,6 +43,29 @@ Required in `.env`: `S3_BUCKET_NAME`, `S3_REGION` (default `eu-north-1`), `S3_AC
 uv run python -m utils.s3 --check   # test credentials
 uv run python -m utils.s3 --fill    # upload media/profile_pics/* to the bucket
 ```
+
+## API overview
+
+- REST: `/api/users`, `/api/posts`; auth via OAuth2 Bearer token from `/api/users/login`
+- Pages: `/`, `/posts`, `/posts/{id}`, `/users/{id}/posts`
+- Service: `/health` (DB check), `/docs` (Swagger UI)
+
+## Project structure
+
+Flat layout, absolute imports from the project root (`from database import Base`):
+
+- `routers/` — API routers; `crud/` — DB queries
+- `models.py`, `schemas.py`, `database.py` — models, Pydantic schemas, engine/session
+- `templates/` — Jinja2 pages; `utils/` — images, email, S3 helpers
+- `alembic/` — migrations; `tests/` — pytest suite
+
+## Tests
+
+```bash
+uv run pytest
+```
+
+Tests expect PostgreSQL at host `db` and mock S3 with `moto`; run them where `db` is reachable.
 
 ## Alembic (DB migrations, async)
 
