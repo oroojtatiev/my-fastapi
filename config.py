@@ -20,7 +20,6 @@ class Settings(BaseSettings):
   auth_access_token_expire_minutes: int
 
   media_profile_pics_dir: Path
-  media_default_profile_pic: Path
   media_max_upload_size_bytes: int = 5 * 1024 * 1024 # 5mb
 
   mail_reset_token_expire_minutes: int
@@ -39,3 +38,9 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+DEFAULT_PROFILE_PIC_KEY = "profile_pics/default.jpeg"
+
+
+def s3_public_url(key: str) -> str:
+  return f"https://{settings.s3_bucket_name}.s3.{settings.s3_region}.amazonaws.com/{key.lstrip('/')}"

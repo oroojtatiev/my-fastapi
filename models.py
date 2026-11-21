@@ -2,7 +2,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from config import settings
+from config import DEFAULT_PROFILE_PIC_KEY, s3_public_url
 from database import Base
 
 
@@ -20,8 +20,8 @@ class User(Base):
   @property
   def image_path(self) -> str:
     if self.image_file:
-      return f"https://{settings.s3_bucket_name}.s3.{settings.s3_region}.amazonaws.com/profile_pics/{self.image_file}"
-    return f"/{settings.media_default_profile_pic.as_posix()}"
+      return s3_public_url(f"profile_pics/{self.image_file}")
+    return s3_public_url(DEFAULT_PROFILE_PIC_KEY)
 
   reset_tokens: Mapped[list[PasswordResetToken]] = relationship(back_populates="user", cascade="all, delete-orphan")
 
