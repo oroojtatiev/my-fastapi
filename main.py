@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import Request, HTTPException, status, Form, Depends, FastAPI
 from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.exceptions import RequestValidationError
 from typing import Annotated
 from sqlalchemy import text
@@ -22,6 +23,8 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(users_router, prefix="/api/users", tags=["users"])
 app.include_router(posts_router, prefix="/api/posts", tags=["posts"])

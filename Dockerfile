@@ -8,8 +8,10 @@ ENV PYTHONUNBUFFERED=1 \
 WORKDIR /app
 
 # libpq is required by pure psycopg (without the [binary] extra); there is nothing to build — all dependencies come as wheels
+# curl is used to fetch the Tailwind CSS standalone CLI during the image build
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq5 \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv (version pinned for reproducible builds)
@@ -27,6 +29,19 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # Copy the code
 COPY . .
+
+# Build Tailwind CSS (standalone CLI, no Node required)
+ARG TARGETARCH
+RUN case "${TARGETARCH:-amd64}" in \
+      amd64) TAILWIND_ARCH="x64" ;; \
+      arm64) TAILWIND_ARCH="arm64" ;; \
+      *) echo "Unsupported TARGETARCH: ${TARGETARCH}" >&2; exit 1 ;; \
+    esac \
+    && curl -sL -o /usr/local/bin/tailwindcss \
+      "https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-${TAILWIND_ARCH}" \
+    && chmod +x /usr/local/bin/tailwindcss \
+    && tailwindcss -i static/css/input.css -o static/css/tailwind.css --minify \
+    && rm /usr/local/bin/tailwindcss
 
 # Unprivileged user. The media/ directory is not included in the image (see .dockerignore),
 # so we create it: the named volume inherits the owner and writes from app work.
