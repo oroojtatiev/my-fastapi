@@ -7,7 +7,7 @@
 - Choose PROD-like solutions with using Docker
 - Follow `uv` documentation for package management.
 - Answer in the same language as the previous question.
-- Conversation in Russian language
+- Keep useful answers short, dense and to the point: no extra detail, but preserve the full meaning.
 
 ## Project structure
 
